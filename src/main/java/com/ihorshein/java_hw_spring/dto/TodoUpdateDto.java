@@ -14,5 +14,5 @@ public class TodoUpdateDto extends TodoCreateDto {
   @NotBlank(message = "Status must be set")
   @Length(max = 45, message = "Maximum length exceeded")
   @EnumValue(enumClass = TodoStatus.class, message = "Invalid status")
-  String status;
+  private String status;
 }

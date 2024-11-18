@@ -8,8 +8,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.Data;
-import org.hibernate.annotations.*;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -22,36 +27,36 @@ public class Todo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  private Long id;
 
   @Column(length = 100, nullable = false)
-  String title;
+  private String title;
 
   @Column(length = 500)
-  String description;
+  private String description;
 
   @Column(name = "due_date", nullable = false)
-  LocalDateTime dueDate;
+  private LocalDateTime dueDate;
 
   @Column(length = 45)
   @Enumerated(EnumType.STRING)
-  TodoPriority priority;
+  private TodoPriority priority;
 
   @Column(length = 45)
   @Enumerated(EnumType.STRING)
-  TodoStatus status;
+  private TodoStatus status;
 
   @CreationTimestamp
   @Column(name = "created_date", nullable = false)
-  LocalDateTime createdDate;
+  private LocalDateTime createdDate;
 
   @UpdateTimestamp
   @Column(name = "updated_date", nullable = false)
-  LocalDateTime updatedDate;
+  private LocalDateTime updatedDate;
 
   @Column(name = "user_id", nullable = false)
-  Long userId = 1L;
+  private Long userId = 1L;
 
   @Column(name = "is_delete", nullable = false)
-  boolean isDelete = false;
+  private boolean isDelete = false;
 }

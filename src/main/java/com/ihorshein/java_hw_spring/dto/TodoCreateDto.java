@@ -15,16 +15,16 @@ public class TodoCreateDto {
 
   @NotBlank(message = "Name cannot be empty")
   @Length(min = 3, max = 100, message = "Maximum length exceeded")
-  String title;
+  private String title;
 
   @Length(max = 500, message = "Maximum length exceeded")
-  String description;
+  private String description;
 
   @NotNull(message = "Due date cannot be empty")
   @FutureOrPresent(message = "The date can be today or in the future")
-  LocalDateTime dueDate;
+  private LocalDateTime dueDate;
 
   @Length(max = 45, message = "Maximum length exceeded")
   @EnumValue(enumClass = TodoPriority.class, message = "Invalid priority")
-  String priority;
+  private String priority;
 }

@@ -20,36 +20,22 @@ public class TaskHistory {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  private Long id;
 
   @ManyToOne
   @JoinColumn(name = "todo_id", referencedColumnName = "id")
-  Todo todo;
+  private Todo todo;
 
   @Column(name = "old_state")
-  String oldState;
+  private String oldState;
 
   @Column(name = "new_state")
-  String newState;
+  private String newState;
 
   @CreationTimestamp
   @Column(name = "change_date", nullable = false)
-  LocalDateTime changeDate;
+  private LocalDateTime changeDate;
 
   @Column(name = "changed_by")
-  String changedBy = null;
-
-  // Lombok failed for those setters.
-
-  public void setTodo(Todo todo) {
-    this.todo = todo;
-  }
-
-  public void setOldState(String oldState) {
-    this.oldState = oldState;
-  }
-
-  public void setNewState(String newState) {
-    this.newState = newState;
-  }
+  private String changedBy = null;
 }

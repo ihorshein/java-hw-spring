@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-  private record ErrorResponse(LocalDateTime time, HttpStatus status, List<String> error) {
+  private record ErrorResponse(LocalDateTime time, HttpStatus status, List<String> errors) {
   }
 
   @Override
@@ -61,4 +61,3 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     return ResponseEntity.status(httpStatus).body(errorResponse);
   }
 }
-

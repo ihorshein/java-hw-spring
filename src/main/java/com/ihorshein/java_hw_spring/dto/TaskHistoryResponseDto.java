@@ -7,15 +7,15 @@ import java.time.LocalDateTime;
 @Data
 public class TaskHistoryResponseDto {
 
-  Long id;
+  private Long id;
 
-  Long todoId;
+  private Long todoId;
 
-  String oldState;
+  private String oldState;
 
-  String newState;
+  private String newState;
 
-  LocalDateTime changeDate;
+  private LocalDateTime changeDate;
 
-  String changedBy;
+  private String changedBy;
 }

@@ -9,21 +9,21 @@ import java.time.LocalDateTime;
 @Data
 public class TodoResponseDto {
 
-  Long id;
+  private Long id;
 
-  String title;
+  private String title;
 
-  String description;
+  private String description;
 
-  LocalDateTime dueDate;
+  private LocalDateTime dueDate;
 
-  TodoPriority priority;
+  private TodoPriority priority;
 
-  TodoStatus status;
+  private TodoStatus status;
 
-  LocalDateTime createdDate;
+  private LocalDateTime createdDate;
 
-  LocalDateTime updatedDate;
+  private LocalDateTime updatedDate;
 
-  Long userId;
+  private Long userId;
 }

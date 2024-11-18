@@ -58,7 +58,7 @@
 
     <!-- Checks whether files end with a new line.                        -->
     <!-- See https://checkstyle.org/config_misc.html#NewlineAtEndOfFile -->
-    <!--<module name="NewlineAtEndOfFile"/>-->
+    <module name="NewlineAtEndOfFile"/>
 
     <!-- Checks that property files contain the same keys.         -->
     <!-- See https://checkstyle.org/config_misc.html#Translation -->
@@ -175,7 +175,7 @@
             <property name="query"
                       value="//*[MODIFIERS//*[@text = 'UtilityClass' or @text='NoArgsConstructor' or @text = 'SpringBootApplication']]/descendant-or-self::node()"/>
         </module>
-        <!--<module name="HideUtilityClassConstructor"/>-->
+        <module name="HideUtilityClassConstructor"/>
         <module name="InterfaceIsType"/>
         <module name="VisibilityModifier">
             <property name="protectedAllowed" value="true"/>

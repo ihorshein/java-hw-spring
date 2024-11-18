@@ -4,21 +4,18 @@ import com.ihorshein.java_hw_spring.dto.TaskHistoryResponseDto;
 import com.ihorshein.java_hw_spring.model.TaskHistory;
 import com.ihorshein.java_hw_spring.repository.TaskHistoryRepository;
 import com.ihorshein.java_hw_spring.service.TaskHistoryService;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TaskHistoryServiceImpl implements TaskHistoryService {
 
   private final TaskHistoryRepository taskHistoryRepository;
-
-  private final ModelMapper modelMapper = new ModelMapper();
-
-  public TaskHistoryServiceImpl(TaskHistoryRepository taskHistoryRepository) {
-    this.taskHistoryRepository = taskHistoryRepository;
-  }
+  private final ModelMapper modelMapper;
 
   @Override
   public List<TaskHistoryResponseDto> history(Long todoId) {
